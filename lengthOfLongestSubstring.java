@@ -1,7 +1,7 @@
 class lengthOfLongestSubstring {
-public:
-    int lengthOfLongestSubstring(string s) {
-        int lastIndex[256];
+
+    public int lengthOfLongestSubstring(String s) {
+        int[] lastIndex = new int[256];
         
         // initialize array with -1
         for (int i = 0; i < 256; i++) {
@@ -12,7 +12,7 @@ public:
         int maxLen = 0;
         
         for (int right = 0; right < s.length(); right++) {
-            char c = s[right];
+            char c = s.charAt(right);
             
             if (lastIndex[c] >= left) {
                 left = lastIndex[c] + 1;
